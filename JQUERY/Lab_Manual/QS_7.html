@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QS_7</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#hide").click(function () {
+                $("#box").hide();
+
+                $("#show").click(function () {
+                    $("#box").show();
+                });
+            });
+        })
+    </script>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">this is box</div>
+    <button id="hide">Hide</button>
+    <button id="show">show</button>
+</body>
+
+</html>

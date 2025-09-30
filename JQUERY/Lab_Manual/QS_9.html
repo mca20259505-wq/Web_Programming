@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QS_9</title>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $("#btn1").click(function(){
+            $(".js").toggle();
+        });
+        $("#btn2").click(function(){
+            $(".php").toggle();
+        });
+        $("#btn3").click(function(){
+            $(".jquery").toggle();
+        });
+    });
+</script>
+</head>
+<body>
+    <div class="js">Javascript</div>
+    <div class="php">php</div>
+    <div class="jquery">jquery</div>
+    <button id="btn1">Toggle javascript</button>
+    <button id="btn2">Toggle php</button>
+    <button id="btn3">toggle jquery</button>
+</body>
+</html>
