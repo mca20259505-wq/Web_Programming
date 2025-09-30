@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Interactive Demo</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        p {
+            font-size: 16px;
+            color: #555;
+            margin-top: 10px;
+        }
+
+        div.box {
+            height: 100px;
+            width: 100px;
+            background-color: #ffcc00;
+            border: 2px solid #333;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        input {
+            padding: 5px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Click / Double Click Demo</h2>
+    <button id="hideBtn">Hide P (Click)</button>
+    <button id="showBtn">Show P (Click)</button>
+    <button id="toggleBtn">Toggle P (Click)</button>
+    <button id="fadeBtn">Fade Toggle P (Click)</button>
+    <button id="slideBtn">Slide Toggle P (Click)</button>
+
+    <p id="demoP">This is a paragraph. Try the buttons above!</p>
+
+    <h2>Mouse Hover Demo</h2>
+    <div class="box"></div>
+
+    <h2>Keyboard Event Demo</h2>
+    <input type="text" placeholder="Type something...">
+
+    <script>
+        $(document).ready(function () {
+            // Click / Show / Hide / Toggle / Fade / Slide
+            $("#hideBtn").click(function () {
+                $("#demoP").hide(1000);
+            });
+
+            $("#showBtn").click(function () {
+                $("#demoP").show(1000);
+            });
+
+            $("#toggleBtn").click(function () {
+                $("#demoP").toggle(1000);
+            });
+
+            $("#fadeBtn").click(function () {
+                $("#demoP").fadeToggle(1000);
+            });
+
+            $("#slideBtn").click(function () {
+                $("#demoP").slideToggle(1000);
+            });
+
+            // Mouse Hover
+            $(".box").hover(
+                function () {
+                    $(this).css({
+                        "background-color": "#ff9900",
+                        "transform": "scale(1.2)",
+                        "cursor": "pointer"
+                    });
+                },
+                function () {
+                    $(this).css({
+                        "background-color": "#ffcc00",
+                        "transform": "scale(1)",
+                        "cursor": "default"
+                    });
+                }
+            );
+
+            // Keyboard event
+            $("input").keypress(function () {
+                alert("Key pressed ");
+            });
+        });
+    </script>
+</body>
+
+</html>

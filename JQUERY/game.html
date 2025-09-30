@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Advanced Snake Game</title>
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #89f7fe, #66a6ff);
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }
+    h1 {
+        color: #fff;
+        margin-top: 20px;
+        text-shadow: 2px 2px #000;
+    }
+    #gameCanvas {
+        background-color: #111;
+        display: block;
+        margin: 20px auto;
+        border: 5px solid #fff;
+        border-radius: 15px;
+    }
+    #scoreBoard, #levelBoard {
+        font-size: 22px;
+        color: #fff;
+        text-shadow: 1px 1px #000;
+        margin: 5px;
+    }
+    #startBtn {
+        padding: 12px 25px;
+        font-size: 16px;
+        background-color: #ff4d4d;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        margin-bottom: 10px;
+    }
+    #startBtn:hover {
+        background-color: #ff1a1a;
+    }
+</style>
+</head>
+<body>
+
+<h1>Advanced Snake Game</h1>
+<div id="scoreBoard">Score: 0</div>
+<div id="levelBoard">Level: 1</div>
+<button id="startBtn">Start Game</button>
+<canvas id="gameCanvas" width="500" height="500"></canvas>
+
+<script>
+const canvas = document.getElementById('gameCanvas');
+const ctx = canvas.getContext('2d');
+const box = 20;
+
+let snake = [];
+let food = {};
+let direction;
+let game;
+let score = 0;
+let level = 1;
+let speed = 120; // initial speed
+
+const foodColors = ["#ff0000","#00ff00","#0000ff","#ffff00","#ff00ff","#00ffff"];
+
+// Initialize snake
+function initSnake() {
+    snake = [];
+    snake[0] = { x: 10 * box, y: 10 * box };
+    direction = "RIGHT";
+    score = 0;
+    level = 1;
+    speed = 120;
+    document.getElementById("scoreBoard").innerText = "Score: " + score;
+    document.getElementById("levelBoard").innerText = "Level: " + level;
+}
+
+// Generate random food
+function generateFood() {
+    food = {
+        x: Math.floor(Math.random() * (canvas.width / box)) * box,
+        y: Math.floor(Math.random() * (canvas.height / box)) * box,
+        color: foodColors[Math.floor(Math.random() * foodColors.length)]
+    };
+}
+
+// Draw snake and food
+function draw() {
+    // Clear canvas
+    ctx.fillStyle = "#111";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    // Draw snake with gradient tail
+    for (let i = 0; i < snake.length; i++) {
+        let shade = 255 - i*5;
+        ctx.fillStyle = `rgb(0,${shade},0)`; 
+        ctx.fillRect(snake[i].x, snake[i].y, box, box);
+        ctx.strokeStyle = "#000";
+        ctx.strokeRect(snake[i].x, snake[i].y, box, box);
+    }
+
+    // Draw food
+    ctx.fillStyle = food.color;
+    ctx.fillRect(food.x, food.y, box, box);
+
+    // Move snake
+    let snakeX = snake[0].x;
+    let snakeY = snake[0].y;
+
+    if(direction === "LEFT") snakeX -= box;
+    if(direction === "UP") snakeY -= box;
+    if(direction === "RIGHT") snakeX += box;
+    if(direction === "DOWN") snakeY += box;
+
+    // Wrap around walls
+    if(snakeX >= canvas.width) snakeX = 0;
+    if(snakeX < 0) snakeX = canvas.width - box;
+    if(snakeY >= canvas.height) snakeY = 0;
+    if(snakeY < 0) snakeY = canvas.height - box;
+
+    // Eating food
+    if(snakeX === food.x && snakeY === food.y){
+        score++;
+        // Increase speed slightly every 5 points
+        if(score % 5 === 0 && speed > 30){
+            speed -= 5;
+            level++;
+            clearInterval(game);
+            game = setInterval(draw, speed);
+        }
+        document.getElementById("scoreBoard").innerText = "Score: " + score;
+        document.getElementById("levelBoard").innerText = "Level: " + level;
+        generateFood();
+    } else {
+        snake.pop();
+    }
+
+    let newHead = {x: snakeX, y: snakeY};
+
+    if(collision(newHead, snake)){
+        clearInterval(game);
+        alert(`Game Over! Score: ${score}, Level: ${level}`);
+    }
+
+    snake.unshift(newHead);
+}
+
+// Check self-collision
+function collision(head, array){
+    for(let i=0;i<array.length;i++){
+        if(head.x === array[i].x && head.y === array[i].y){
+            return true;
+        }
+    }
+    return false;
+}
+
+// Controls
+document.addEventListener("keydown", function(event){
+    if(event.key === "ArrowLeft" && direction !== "RIGHT") direction = "LEFT";
+    if(event.key === "ArrowUp" && direction !== "DOWN") direction = "UP";
+    if(event.key === "ArrowRight" && direction !== "LEFT") direction = "RIGHT";
+    if(event.key === "ArrowDown" && direction !== "UP") direction = "DOWN";
+});
+
+// Start Game
+document.getElementById("startBtn").addEventListener("click", function(){
+    initSnake();
+    generateFood();
+    clearInterval(game);
+    game = setInterval(draw, speed);
+});
+</script>
+
+</body>
+</html>

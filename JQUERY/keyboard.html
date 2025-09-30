@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard Color Change</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        p {
+            font-size: 18px;
+            padding: 20px;
+            background-color: #ffcc00;
+            border-radius: 10px;
+            transition: background-color 0.3s ease;
+        }
+        input {
+            padding: 5px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Press any key to change color!</h2>
+<p id="colorBox">I change color whenever you press a key.</p>
+<input type="text" placeholder="Type something...">
+
+<script>
+$(document).ready(function(){
+    const colors = ["#ff0000","#00ff00","#0000ff","#ff00ff","#00ffff","#ffff00","#ffa500","#800080"];
+
+    $("input").keypress(function(){
+        // pick random color from array
+        let randomColor = colors[Math.floor(Math.random() * colors.length)];
+        $("#colorBox").css("background-color", randomColor);
+    });
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="f">
+        <ul id="mylist">
+            <li>apple</li>
+            <li>banana</li>
+        </ul>
+        <button onclick="add();">Add</button>
+    </div>
+    <script>
+        function add() {
+
+
+            let newnode = document.createElement("li");
+            newnode.innerHTML = "mango";
+            let list = document.getElementById("mylist");
+            let firstitem = list.firstChild;
+            list.insertBefore(newnode, firstitem);
+        }
+    </script>
+</body>
+
+</html>

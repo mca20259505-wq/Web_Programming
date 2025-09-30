@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="#" onsubmit="show(); return false">
+        <label>Enter  your name : </label><br>
+        <input type="text" id="nm" name="name"><br>
+        <label>Enter your age : </label><br>
+        <input type="number" class="age" name="age"><br>
+        <label>Enter your course : </label><br>
+        <input type="text" class="course" name="course"><br><br>
+        <input type="submit" value="submit" id="sub">
+    </form>
+    <p id="detail"></p>
+    <script>
+        function show() {
+
+            const name = document.getElementById("nm").value;
+            const age = document.getElementsByClassName("age")[0].value;
+            const cour = document.getElementsByName("course")[0].value;
+            document.getElementById("detail").innerHTML = "Student details <br> Name : " + name + "<br> Age : " + age + "<br> Course : " + cour;
+
+        }
+    </script>
+</body>
+
+</html>
