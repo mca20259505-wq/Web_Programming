@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QS_11</title>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $("#btn1").click(function(){
+            $("#box1").slideUp();
+        });
+
+        $("#btn2").click(function(){
+            $("#box2").slideDown();
+        });
+
+        $("#btn3").click(function(){
+            $("#box3").slideToggle();
+        });
+    });
+</script>
+</head>
+<body>
+    <p id="box1">This box-1</p>
+    <p id="box2" style="display: none;">This is box-2</p>
+    <p id="box3">This is box-3</p>
+
+    <button id="btn1">Slide up</button>
+    <button id="btn2" >Slide down</button>
+    <button id="btn3">Slide toggle</button>
+</body>
+</html>
