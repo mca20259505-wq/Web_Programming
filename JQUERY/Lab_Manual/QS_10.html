@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QS_10</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#fadein").click(function(){
+                $("#box").fadeIn();
+            });
+
+            $("#fadeout").click(function(){
+                $("#box1").fadeOut();
+            });
+
+            $("#fadeto").click(function(){
+                $("#box2").fadeTo();
+            });
+
+            $("#fadeToggle").click(function(){
+                $("#box3").fadeToggle();
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <p id="box" style="display: none;">This is box for fadein</p>
+    <p id="box1">This is box forfadeout</p>
+    <p id="box2">This is box for fadeto</p>
+    <p id="box3">This is box for fadetoggle</p>
+
+    <button id="fadein">Fade In</button>
+    <button id="fadeto">Fade To</button>
+    <button id="fadeToggle">Fade Toggle</button>
+    <button id="fadeout">Fade Out</button>
+</body>
+
+</html>
