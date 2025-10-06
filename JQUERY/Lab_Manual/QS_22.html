@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h2>Choose Background Color:</h2>
+    <input type="radio" name="color" value="red"> Red<br>
+    <input type="radio" name="color" value="blue"> Blue<br>
+    <input type="radio" name="color" value="green"> Green<br>
+    <input type="radio" name="color" value="yellow"> Yellow<br>
+    <input type="radio" name="color" value="lightgray"> Light Gray
+
+    <script>
+        $(document).ready(function(){
+            $("input[name='color']").change(function(){
+                let colour = $("input[name='color']:checked").val();
+                $("body").css("background-color", colour);
+            });
+        });
+    </script>
+</body>
+</html>
