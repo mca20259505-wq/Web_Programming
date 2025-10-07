@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QS_26</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        #box {
+            height: 200px;
+            width: 200px;
+            background-color: salmon;
+            border: 10px solid darkblue;
+            box-sizing: 10px 0 1px 0 rgba(0, 163, 108);
+        }
+
+        .borderClass {
+            border: none !important;
+
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            $("#btn").click(function () {
+                $("#box").toggleClass("borderClass")
+            });
+
+        })
+    </script>
+</head>
+
+<body>
+    <div id="box">
+
+    </div>
+    <button id="btn">Toggle</button>
+</body>
+
+</html>
