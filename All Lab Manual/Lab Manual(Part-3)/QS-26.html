@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QS-26</title>
+</head>
+
+<body>
+
+    <script>
+        const n = prompt("Enter number :");
+
+        fact(n);
+
+        function fact(num) {
+            f = 1;
+            for (let i = 1; i <= n; i++) {
+
+                f *= i;
+            }
+            document.write("Factorial of  " + n + " is " + f);
+        }
+    </script>
+</body>
+
+</html>

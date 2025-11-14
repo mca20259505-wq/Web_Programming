@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QS31</title>
+</head>
+
+<body>
+    <form action="#">
+        <label for="num"></label>
+        <input type="number" name="num" id="num" placeholder="Enter a number :">
+
+        <br><br>
+
+
+        <input type="radio" name="rd" id="rd1">Check number positive or negative
+        <br><br>
+        <input type="radio" name="rd" id="rd2">Check number is odd or even
+        <br><br>
+        <input type="radio" name="rd" id="rd3">Check number is prime or not
+        <br><br>
+        <input type="radio" name="rd" id="rd4">Find the factorial of the number
+        <br><br>
+        <input type="radio" name="rd" id="rd5">Find the square of the number
+        <br><br>
+        <input type="radio" name="rd" id="rd6">Find the power of the number
+        <br><br>
+        <input type="radio" name="rd" id="rd7">Find the sum of all odd numbers between 1 to x
+        <br><br>
+        <input type="radio" name="rd" id="rd8">Find the sum of all even numbers between 1 to x
+
+        <br><br>
+        <button type="submit" onclick="radio();">Click</button>
+    </form>
+
+    <script>
+        function radio() {
+
+            const Values = document.querySelectorAll('input[type="radio"]');
+            let v = document.querySelector('input[type="radio"]:checked');
+            let n = document.getElementById("num").value;
+            document.write(Values[0])
+            document.write(Values[0].innerHTML)
+
+
+
+
+
+            if (v.value == Values[0].innerHTML) {
+                alert(v.value + " and " + Values[0].innerHTML);
+            }
+
+        }
+    </script>
+</body>
+
+</html>

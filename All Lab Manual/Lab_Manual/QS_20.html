@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QS_20</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#btn").click(function () {
+
+                let value = $("#ip").val();
+                $(value).hide();
+
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <input type="text" name="ip" id="ip" placeholder="Enter class,id or element name">
+
+    <p>Text-1</p>
+    <p id="p1">Text-2 : id is "#p1"</p>
+    <p class="p2">Text-3 : class is ".p2"</p>
+
+    <button id="btn">Hide</button>
+</body>
+
+</html>

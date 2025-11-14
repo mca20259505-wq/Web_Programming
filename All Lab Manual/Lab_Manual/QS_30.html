@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <title>QS-30</title>
+    <style>
+        #h{
+            font-size: 2rem;
+        }
+      
+    </style>
+    <script>
+        $(document).ready(function(){
+            $('input').blur(function(){
+                var txt = $(this).val().trim();
+
+                if(txt.toUpperCase() == "JQUERY"){
+                    $("p").text("success").css("color","green")
+                }else{
+                    $("p").text("try again").css("color","red")
+                }
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <p id="h">Enter word :</p>
+    <input type="text" name="txt" id="txt">
+    <p></p>
+
+</body>
+
+</html>

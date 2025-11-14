@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QS-8 </title>
+</head>
+<h2>Fahrenheit to Celsius</h2>
+<form action="#" onsubmit="Convert(); return false;">
+    <label for="temp"></label>
+    <input type="number" name="temp" id="temp" placeholder="Enter Temprature in fahrenheit">
+
+    <button type="submit">Convert</button>
+</form>
+
+<body>
+    <script>
+        function Convert() {
+            const temp = parseInt(document.getElementById("temp").value);
+            const celsius = (temp - 32) * 5 / 9;
+            // const fahrenheit = (temp * 9 / 5) + 32;
+            document.write(`Temprature in celsius : ${celsius}` + "<br>");
+            // document.write(`Temprature in fahrenheit : ${fahrenheit}`);
+        }
+    </script>
+</body>
+
+</html>

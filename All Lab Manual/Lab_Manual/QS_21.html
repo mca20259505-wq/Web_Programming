@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QS_21</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#btn").click(function () {
+                let colour = $("#ip").val();
+
+                $("#ip").css("background-color", colour);
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <input type="text" name="ip" id="ip" placeholder="Enter any color ">
+    <button id="btn">Change bg</button>
+</body>
+
+</html>

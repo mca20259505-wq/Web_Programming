@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QS_25</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   <style>
+    #box{
+        height: 200px;
+        width: 200px;
+        background-color: chocolate;
+        text-align: center;
+        justify-content: center;
+        position: absolute;
+    }
+   </style>
+   <script>
+    $(document).ready(function(){
+        $("#box").mouseenter(function(){
+            $(this).css("height","500px");
+            $(this).css("width","450px")
+            $(this).css("background-color","brown")
+            $(this).css("color","white")
+        });
+
+        $("#box").mouseleave(function(){
+            $("#box").css("height:300px");
+            $("#box").css("width","700px");
+            $("#box").css("background-color","Salmon");
+            $("#box").css("color","#00A36C")
+        })
+    })
+   </script>
+</head>
+
+<body>
+    <div id="box">
+        <p id="para">This is paragraph...</p>
+    </div>
+</body>
+
+</html>

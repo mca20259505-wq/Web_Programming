@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>jQuery Features Highlight</title>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    padding: 30px;
+    line-height: 1.8;
+  }
+
+  p {
+    background-color: #f0f0f0;
+    padding: 15px;
+    border-left: 5px solid #ccc;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+  }
+
+  .highlight {
+    background-color: #ffe066;
+    border-left-color: #ff9900;
+    transform: scale(1.02);
+  }
+</style>
+
+<script>
+$(document).ready(function(){
+    $('p').mouseenter(function(){
+        $(this).addClass('highlight');
+    });
+
+    $('p').mouseleave(function(){
+        $(this).removeClass('highlight');
+    });
+});
+</script>
+
+</head>
+<body>
+
+<h1>Features of jQuery</h1>
+
+<p>1. <strong>DOM Manipulation:</strong> jQuery allows you to easily select and modify HTML elements with simple syntax.</p>
+
+<p>2. <strong>Event Handling:</strong> You can attach event listeners to elements such as click, mouseenter, keypress, etc., effortlessly.</p>
+
+<p>3. <strong>Animation Effects:</strong> jQuery provides built-in animation methods like fadeIn, fadeOut, slideUp, slideDown, and custom animations.</p>
+
+<p>4. <strong>AJAX Support:</strong> jQuery simplifies AJAX calls and lets you dynamically load content without reloading the page.</p>
+
+<p>5. <strong>Cross-Browser Compatibility:</strong> jQuery handles browser inconsistencies so your code works on all major browsers.</p>
+
+</body>
+</html>

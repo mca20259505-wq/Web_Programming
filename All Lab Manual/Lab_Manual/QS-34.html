@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QS34</title>
+</head>
+
+<body>
+    <form action="#" onsubmit="Check(event)">
+        <input type="text" id="char" maxlength="2" oninput="this.value = this.value.replace(/[^a-zA-Z]/g, '').slice(0,2);" />
+        <button type="submit">Check</button>
+    </form>
+
+    <p id="result"></p>
+
+    <script>
+        function Check(event) {
+            event.preventDefault();
+
+            let inputVal = document.getElementById("char").value.toLowerCase();
+            let vowels = ["a", "e", "i", "o", "u"];
+
+
+            let result = "";
+            for (let ch of inputVal) {
+                if (vowels.includes(ch)) {
+                    result += `${ch} is vowel\n`;
+                } else {
+                    result += `${ch} is not vowel\n`;
+                }
+            }
+
+            document.getElementById("result").innerText = result;
+        }
+    </script>
+</body>
+
+</html>

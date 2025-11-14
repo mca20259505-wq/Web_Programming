@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QS-30</title>
+</head>
+
+
+<body>
+    <form action="#">
+        <label for="x"></label>
+        <input type="text" name="x" id="x" placeholder="Enter value of x">
+
+        <br><br>
+
+        <label for="y"></label>
+        <input type="text" name="y" id="y" placeholder="Enter value of y">
+
+        <br><br>
+
+        <div id="answer"></div>
+
+        <button id="a" onclick="add();">+</button>
+        <button id="s" onclick="sub();">-</button>
+        <button id="m" onclick="mult();">*</button>
+        <button id="d" onclick="div();">/</button>
+    </form>
+
+    <script>
+        function getValues() {
+            return [Number(document.getElementById("x").value), Number(document.getElementById("y").value)]
+        }
+
+        function add() {
+            const [p, q] = getValues();
+            document.getElementById("answer").innerHTML = p + q;
+        }
+
+        function sub() {
+            const [p, q] = getValues();
+            document.getElementById("answer").innerHTML = p - q;
+
+        }
+
+        function mult() {
+            const [p, q] = getValues();
+            document.getElementById("answer").innerHTML = p * q;
+        }
+
+        function div() {
+            const [p, q] = getValues();
+            document.getElementById("answer").innerHTML = p / q;
+        }
+    </script>
+</body>
+
+</html>

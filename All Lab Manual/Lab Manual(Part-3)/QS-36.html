@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QS-36</title>
+</head>
+<body>
+    <form action="#" onsubmit="marksheet(); return false;">
+        <h2>Student Marksheet</h2>
+
+        <label for="java">Java :</label>
+        <input type="number" name="java" id="java">
+
+        <br><br>
+
+        <label for="os">OS :</label>
+        <input type="number" name="os" id="os">
+
+        <br><br>
+
+        <label for="python">Python</label>
+        <input type="number" name="python" id="python">
+
+        <br><br>
+
+        <label for="history">History</label>
+        <input type="number" name="history" id="history">
+
+        <button type="submit">Create Marksheet</button>
+        <div id="marksheet"></div>
+    </form>
+
+    <script>
+        function marksheet()
+        {
+            let java = parseInt(document.getElementById("java").value);
+            let os = parseInt(document.getElementById("os").value);
+            let python = parseInt(document.getElementById("python").value);
+            let history = parseInt(document.getElementById("history").value);
+
+            total_marks = java + os +  python + history;
+            percentage = (total_marks / 400) * 100;
+            
+            document.getElementById("marksheet").innerHTML = "<p>Total Marks :" + total_marks +"\n" + "Percentage :"+  percentage+"%";
+        }
+    </script>
+</body>
+</html>

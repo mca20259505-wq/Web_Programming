@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QS-28</title>
+</head>
+
+<body>
+    <form action="#">
+        <p id="college">ISTAR</p>
+        <p id="dept">Computer Science</p>
+
+        <button id="swap" onclick="Swap();">Swap</button>
+    </form>
+
+    <script>
+        const paras = document.getElementsByTagName("p");
+
+        function Swap() {
+            let temp = paras[0].innerHTML;
+            paras[0].innerHTML = paras[1].innerHTML;
+            paras[1].innerHTML = temp;
+
+        }
+    </script>
+</body>
+
+</html>

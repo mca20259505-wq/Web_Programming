@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QS-7</title>
+</head>
+<form action="#" onsubmit="Calc(); return false;">
+    <h2>Number Game!!!</h2>
+
+    <label for="num1"></label>
+    <input type="number" name="num1" id="num1" placeholder="Enter number-1">
+
+    <br><br>
+
+    <label for="num2"></label>
+    <input type="number" name="num2" id="num2" placeholder="Enter number-2">
+
+    <br><br>
+
+    <button type="submit">Calculate!!</button>
+</form>
+
+<body>
+    <script>
+        function Calc() {
+            const number1 = parseInt(document.getElementById("num1").value);
+            const number2 = parseInt(document.getElementById("num2").value);
+
+            let sum = number1 + number2;
+            document.write("Addition is : " + sum + "<br>")
+
+            let sub = number1 - number2;
+            document.write("Substraction is : " + sub + "<br>")
+
+            let product = number1 * number2;
+            document.write("Product is : " + product + "<br>")
+
+            let div = number1 / number2;
+            document.write("Division is :" + div + "<br>")
+
+        }
+    </script>
+</body>
+
+</html>

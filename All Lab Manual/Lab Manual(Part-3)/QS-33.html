@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QS-33</title>
+</head>
+
+<body>
+    <form action="#">
+        <input type="text" name="str1" id="str1" placeholder="Enter string-1">
+        <input type="text" name="str2" id="str2" placeholder="Enter String-2">
+        <button type="submit" onclick="Check();">Check</button>
+        <p id="res"></p>
+
+
+    </form>
+    <script>
+        function Check() {
+
+            let str1 = document.getElementById("str1").value;
+            let str2 = document.getElementById("str2").value;
+
+            r = str1.length > str2.length ? `${str1} is longer` : `${str2} is longer`;
+            document.getElementById("res").innerHTML = r;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<form action="#" onsubmit="print(); return false;">
+    <label for="name">Name :</label>
+    <input type="text" name="name" id="name">
+    <br>
+    <label for="age">Age :</label>
+    <input type="number" name="age" id="age">
+    <br>
+    <label for="course">Course :</label>
+    <input type="text" name="course" id="course">
+    <br>
+    <button type="submit">That's it!!</button>
+</form>
+
+<body>
+    <script>
+        // name = document.getElementById("name");
+        function print() {
+            const name = document.getElementById("name").value;
+            const age = document.getElementById("age").value;
+            const course = document.getElementById("course").value;
+            document.writeln(name + "<br>");
+            document.writeln(age + "<br>")
+            document.writeln(course + "<br>")
+        }
+        document.write("Name : Megji Rehan <br>");
+        document.write("age : 19");
+    </script>
+</body>
+
+</html>

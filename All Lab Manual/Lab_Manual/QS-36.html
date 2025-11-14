@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marksheet</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background: #fff;
+            padding: 30px 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            width: 350px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: 500;
+            color: #555;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            outline: none;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        input:focus {
+            border-color: #4CAF50;
+            box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 20px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #45a049;
+        }
+
+        #result {
+            margin-top: 20px;
+            padding: 15px;
+            background: #e8f5e9;
+            border: 1px solid #4CAF50;
+            border-radius: 8px;
+            text-align: center;
+            color: #333;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Mark Sheet</h2>
+        <label for="name">Name:</label>
+        <input type="text" id="name">
+
+        <label for="java">Java:</label>
+        <input type="text" id="java">
+
+        <label for="os">OS:</label>
+        <input type="text" id="os">
+
+        <label for="Python">Python:</label>
+        <input type="text" id="Python">
+
+        <label for="web">Web:</label>
+        <input type="text" id="web">
+
+        <button onclick="fun()">Submit</button>
+
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function fun() {
+            let name = document.getElementById("name").value;
+            let java = parseInt(document.getElementById("java").value) || 0;
+            let os = parseInt(document.getElementById("os").value) || 0;
+            let Python = parseInt(document.getElementById("Python").value) || 0;
+            let web = parseInt(document.getElementById("web").value) || 0;
+
+            let total = java + os + Python + web;
+            let per = (total / 400) * 100;
+
+            document.getElementById("result").innerHTML = 
+                "Name: " + name + "<br>" +
+                "Total Marks: " + total + "/400<br>" +
+                "Percentage: " + per.toFixed(2) + "%";
+        }
+    </script>
+</body>
+</html>

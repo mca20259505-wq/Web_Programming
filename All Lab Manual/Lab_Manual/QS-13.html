@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QS-13</title>
+</head>
+
+<body>
+    <form action="#" onsubmit="check(); return false;">
+        <label for="num"></label>
+        <input type="number" name="num" id="num" placeholder="Enter number ">
+
+        <button type="submit">Check Number</button>
+    </form>
+
+    <script>
+        function check() {
+
+            const num = parseInt(document.getElementById("num").value)
+
+
+            if (num > 0) {
+                document.write(`${num} is positive`);
+            } else if (num < 0) {
+                document.write(`${num} is negative`)
+            } else if (num == 0) {
+                document.write(`${num} is zero`)
+            }
+        }
+    </script>
+</body>
+
+</html>

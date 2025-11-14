@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <title>QS-28</title>
+    <style>
+        .blink{
+            font-size: 3rem;
+            text-align: center;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            function blink_txt(){
+                $('.blink').fadeOut(500).fadeIn(500);
+     
+
+            }
+            setInterval(blink_txt,1000)
+        })
+    </script>
+</head>
+
+<body>
+   <p class="blink">hey, this is text</p>
+</body>
+
+</html>
